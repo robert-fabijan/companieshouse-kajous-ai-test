@@ -1,0 +1,32 @@
+[
+    {
+      "name": "company_id",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "due_date",
+      "type": "FLOAT",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "type",
+      "type": "FLOAT",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "tag_name",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "value",
+      "type": "FLOAT",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "timestamp",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    }
+]
