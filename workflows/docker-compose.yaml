@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  db:
+    build: ./sciezka_do_Dockerfile_sql
+    ports:
+      - "1433:1433"
+    environment:
+      SA_PASSWORD: "TwojeHaslo123"
+      ACCEPT_EULA: "Y"
+
+  app:
+    build: ./sciezka_do_Dockerfile_python
+    ports:
+      - "5000:5000" # Zmień porty jeśli Twoja aplikacja używa innych
+    depends_on:
+      - db
