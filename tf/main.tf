@@ -2,15 +2,15 @@
 
 # Set up Cloud Function for air-pollution API data extraction
 resource "google_cloudfunctions_function" "companieshouse-download-file" {
-  name                  = "air-pollution-api-function"
-  description           = "Function to retrieve data from Openweather API"
+  name                  = "companieshouse-function"
+  description           = "Function to download file from Companies House UK"
   runtime               = "python311"
   available_memory_mb   = 256
   source_repository {
     url = "https://source.developers.google.com/projects/${var.gcp_project}/repos/${var.repository_name}/moveable-aliases/${var.branch_name}/paths/${var.source_directory}"
   }
   trigger_http          = true
-  entry_point           = "gcloud_get_openweather_data_function"
+  entry_point           = "gcloud_download_companieshouse_file"
 }
 
 

@@ -1,5 +1,5 @@
-gcp_svc_key = "../gcloud/configs/credentials-terraform.json"
-gcp_project = "terraform-test-project-412415"
+gcp_svc_key = "../gcloud/configs/companieshouse-test-fc8338dd0a74.json"
+gcp_project = "companieshouse-test"
 gcp_region = "europe-west1"
 
 # Vars for Cloud Function sync with github repo

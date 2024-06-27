@@ -18,7 +18,7 @@ from shared.models.gcloud_integration import GCloudIntegration
 def gcloud_download_companieshouse_file(request, context=None) -> None:
     """
     
-    Run a process of downloading a csv file from companieshouse endpoitn
+    Run a process of downloading a csv file from companieshouse endpoint
 
     :param request:
     :param context:
