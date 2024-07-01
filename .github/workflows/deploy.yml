@@ -13,6 +13,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+
     - name: Set up Google Cloud SDK
       uses: google-github-actions/setup-gcloud@v1
       with:
@@ -20,16 +21,17 @@ jobs:
         project_id: companieshouse-test
         service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS2 }}
 
+
     - name: Authenticate with service account
       run: |
         echo '${{ secrets.GOOGLE_APPLICATION_CREDENTIALS2 }}' | jq '.' > $HOME/gcloud-key.json
         gcloud auth activate-service-account --key-file=$HOME/gcloud-key.json
 
 
-
-
     - name: Set Project ID
       run: gcloud config set project companieshouse-test
+
+
 
     - name: Deploy to Google Cloud Functions
       run: |
