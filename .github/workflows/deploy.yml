@@ -20,12 +20,17 @@ jobs:
         project_id: companieshouse-test
         service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
 
+    - name: Authenticate with service account
+      run: |
+        echo ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }} > $HOME/gcloud-key.json
+        gcloud auth activate-service-account --key-file=$HOME/gcloud-key.json
+        gcloud config set project companieshouse-test
+
     - name: Deploy to Google Cloud Functions
       run: |
-        gcloud functions deploy cloud-function-name \
+        gcloud functions deploy companieshouse-function \
         --runtime python311 \
         --trigger-http \
         --entry-point gcloud_download_companieshouse_file \
         --region eu \
-        --source ../gcloud/gcloud_functions
-
+        --source ./gcloud/gcloud_functions
