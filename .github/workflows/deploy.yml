@@ -18,11 +18,11 @@ jobs:
       with:
         version: 'latest'
         project_id: companieshouse-test
-        service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+        service_account_key: ${{ secrets.GOOGLE_CREDENTIALS }}
 
     - name: Authenticate with service account
       run: |
-        echo '${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}' | jq '.' > $HOME/gcloud-key.json
+        echo '${{ secrets.GOOGLE_CREDENTIALS }}' | jq '.' > $HOME/gcloud-key.json
         gcloud auth activate-service-account --key-file=$HOME/gcloud-key.json
 
 
