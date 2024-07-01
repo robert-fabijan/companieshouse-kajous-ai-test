@@ -22,8 +22,8 @@ jobs:
 
     - name: Deploy to Google Cloud Functions
       run: |
-        gcloud functions deploy YOUR_FUNCTION_NAME \
-        --runtime YOUR_RUNTIME \
+        gcloud functions deploy cloud-function-name \
+        --runtime python311 \
         --trigger-http \
         --entry-point gcloud_download_companieshouse_file \
         --region eu \
