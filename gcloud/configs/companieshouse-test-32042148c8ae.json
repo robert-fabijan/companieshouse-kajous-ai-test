@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "companieshouse-test",
+  "private_key_id": "32042148c8aee092f2660213ea2bea93898c2838",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDQB2HhE39jtOmB\n7E/Nlfj1leeJkUOz78y+lbj9OtaVoZyHFE4l8tm853pql09unQqevTSxru+ZLOmp\nwlbQ33W1mvVVkGpjb5empT/7Wi5uqxYar4S46kq98NH+x3Yr68jrRrDszjnPN5D1\nBJnwuFypwT7vuFDid2x4ItzVuAu2r+3YUgmKUhPLPUnb9elunI5Fy8R/amcbVSoq\nLVUljLNLMlheHfNODbSUCPvJeP9kAsDtA0vS1eHkyi+uGslrNl/DRPd5q5RHcZlu\n/ADOCESmRpYl//2Pt92JKFx78YEwWombqpWVgw22Wi7goo6coO7DhnPw+CmqTyxY\nkZuJU+3VAgMBAAECggEAK0jR8p9YMwKWUJB/NVdmbxETFWJqnCLB7wjfrh8DPayc\nEVYmAYrjh8UBSXL01d7qsgdL0snDtFMuRkJ3xmushg45TGWpYUm7m/LH2pCT1zaV\neZV6L/Cd/yH/y7usaKydiGjT0N4DFMzqxjSAJGBz9WVOZ1oqSEjRgri8SuLJ2yel\nQI4YTTQlqT83O6IpmxNwJyL3mE6KfpP9nUjiOeY9ttmiz/J9VPMt8HByGRvznPYw\n43RlJe02MMyh4ynMyw5oQDKOJ80WFOawYj65ohYyibsNYBdYL8zsUzBbccFiMry/\nXOC74e0THUl4nyNwOTuj6R2I9kbCx7v43s81ZMDe0QKBgQD2RIganjgtY/IQheDX\nCPwFBY03aS11uNdgDxilKheURIoApS0XU6jeRaNjYM20l8BMJ96tHGPRjUpC88qV\nBaEZTzyAEWrSbb636Hj8gv1oszQrr1axXCJBpS+B9QisAXSPEGCctFTk0HVyLyd8\nHg7F76J0IV5cAE9qZwuphqZ+0QKBgQDYP/3TbqmREhG3aZcFrGgygbNXYoWGYz9N\nkRFKCqVX7T7r+aDuPIheOCls9OMq1AkWUDAyU8i78M/h187AvaCDx5L034fNkenJ\nvs+6P9QUmsOyVv7mSXGu+yY0A26+sx3KVz88/dRXiLIS515x/Lxs4HXi+BFLqshl\ntW2EaVqnxQKBgAgzA+0O84PfXgHa0z+Vlv57ztXXdKIEw3b5SbLGEf7nwUiAN14d\ndPPhka0PXgnzO33NngZZeaFSePR9tXL8uv5iuvrwmYPkD4OEA/M0UUeZH9WMgvBo\nxuM0or5K8Dz5122j9/N/tYvgvOhOVZw2S/ufHOOM8N1TTVGXmLXOO+DhAoGACoJp\noonhQcSgCcre5Q6w7atx/NAz7wkJvYpMTc3gpTpJcYxrLsjQU8vk73+jPqSZYHU7\nMmbx/XhBkhc73BAbKexcDvyCDBKISx6z17hcZTf0RMmHj8eH99oKzEJScoAf9YJx\n91PaqvpgtRx7cYy31469C+/EX2oIXTEJBoNcPYUCgYBei1ymIFQ7x49gE6rqYqws\nhniRHV/O4q+Hq8HoOr8LWACuW9rG0gO9JIgOnkMlvd6kosKxEdyuz8mYjZSZ+dUH\nmt8Rw/FcP9jCF+DCs4PTY2PX2MVpeF7LZnbzU1qHtsHhNbO5uFolCzXGq4WhFLoL\n4H3vgZzarlw4t68j2t87Fw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "companieshouse-kajous-ai-sa@companieshouse-test.iam.gserviceaccount.com",
+  "client_id": "114498843846631044693",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/companieshouse-kajous-ai-sa%40companieshouse-test.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
