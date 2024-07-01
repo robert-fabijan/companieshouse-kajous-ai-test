@@ -37,5 +37,5 @@ jobs:
         --runtime python311 \
         --trigger-http \
         --entry-point gcloud_download_companieshouse_file \
-        --region eu \
+        --region europe-central2-a \
         --source ./gcloud/gcloud_functions
