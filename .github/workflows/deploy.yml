@@ -22,7 +22,7 @@ jobs:
 
     - name: Authenticate with service account
       run: |
-        echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}" > $HOME/gcloud-key.json
+        echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}" | jq '.' > $HOME/gcloud-key.json
         gcloud auth activate-service-account --key-file=$HOME/gcloud-key.json
 
 
