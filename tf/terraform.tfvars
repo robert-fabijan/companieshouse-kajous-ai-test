@@ -1,8 +1,9 @@
-gcp_svc_key = "../gcloud/configs/companieshouse-test-fc8338dd0a74.json"
-gcp_project = "companieshouse-test"
-gcp_region = "europe-west1"
+gcp_svc_key      = "../gcloud/configs/companieshouse-test-32042148c8ae.json"
+gcp_project      = "companieshouse-test"
+gcp_region       = "europe-west1"
 
 # Vars for Cloud Function sync with github repo
-repository_name = "github_robert-fabijan_air-pollution"
-branch_name = "main"
-source_directory = "gcloud/gcloud_functions/"
+github_token     = "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" 
+github_owner     = "robert-fabijan"
+github_repo      = "companieshouse-kajous-ai-test"
+github_branch    = "main"
