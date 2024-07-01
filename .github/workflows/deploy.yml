@@ -1,0 +1,31 @@
+name: Deploy to Google Cloud Functions
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Google Cloud SDK
+      uses: google-github-actions/setup-gcloud@v1
+      with:
+        version: 'latest'
+        project_id: companieshouse-test
+        service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+
+    - name: Deploy to Google Cloud Functions
+      run: |
+        gcloud functions deploy YOUR_FUNCTION_NAME \
+        --runtime YOUR_RUNTIME \
+        --trigger-http \
+        --entry-point gcloud_download_companieshouse_file \
+        --region eu \
+        --source ../gcloud/gcloud_functions
+
