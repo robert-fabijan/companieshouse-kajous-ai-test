@@ -18,3 +18,4 @@ main:
         result: pubsub_response
     - return_results:
         return: ${pubsub_response}
+

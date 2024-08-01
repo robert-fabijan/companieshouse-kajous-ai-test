@@ -32,7 +32,6 @@ jobs:
       run: gcloud config set project companieshouse-test
 
 
-
     - name: Deploy to Google Cloud Functions
       run: |
         gcloud functions deploy companieshouse-function \
@@ -41,3 +40,9 @@ jobs:
         --entry-point gcloud_download_companieshouse_file \
         --region europe-central2 \
         --source ./gcloud/gcloud_functions
+
+    - name: Deploy workflow
+      run: |
+        gcloud workflows deploy AirPollutionWorkflow \
+        --location europe-central2 \
+        --source ./workflows/companieshouse_to_pubsub.yaml
