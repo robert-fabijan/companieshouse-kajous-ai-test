@@ -26,7 +26,7 @@ def gcloud_download_companieshouse_file(request, context=None) -> None:
     if response.status_code != 200:
         return f'Failed to download file from {url}', 500
     
-    print('Success')
+    print('Success!')
     
     # Bucket upload
     # GCloudIntegrationObject = GCloudIntegration(project_id = 'companieshouse-test') 
