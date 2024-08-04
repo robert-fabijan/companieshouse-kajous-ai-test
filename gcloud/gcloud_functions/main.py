@@ -1,7 +1,10 @@
 import functions_framework
+import json
 import os
 import requests
 from google.cloud import storage
+from google.oauth2 import service_account
+
 
 @functions_framework.http
 def gcloud_download_companieshouse_file(request, context=None) -> str:
@@ -19,13 +22,17 @@ def gcloud_download_companieshouse_file(request, context=None) -> str:
     filename = url.split('/')[-1]
     bucket_name = 'raw_files_companieshouse'
 
+    # Load credentials from JSON
+    credentials = service_account.Credentials.from_service_account_info(json.loads(os.environ['GOOGLE_APPLICATION_CREDENTIALS']))
+    
+
     # Start a session and download the file
     with requests.Session() as session:
         with session.get(url, stream=True) as response:
             response.raise_for_status()  # Check for HTTP errors
 
             # Stream the file directly into GCS without saving locally
-            storage_client = storage.Client()
+            storage_client = storage.Client(credentials=credentials)
             bucket = storage_client.bucket(bucket_name)
             blob = bucket.blob(filename)
             
