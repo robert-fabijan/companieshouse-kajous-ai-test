@@ -31,7 +31,6 @@ def gcloud_download_companieshouse_file(request, context=None) -> None:
 
     # print("File downloaded successfully!")
     
-    import os
     print(os.environ['GOOGLE_APPLICATION_CREDENTIALS'])
 
     # # Bucket upload
@@ -45,4 +44,4 @@ def gcloud_download_companieshouse_file(request, context=None) -> None:
     #     filename = filename
     # )
     
-    return 200
+    return 'Test'
