@@ -7,7 +7,6 @@ import requests
 @functions_framework.http
 def gcloud_download_companieshouse_file(request, context=None) -> None:
     """
-    
     Run a process of downloading a csv file from companieshouse endpoint
 
     :param request:
@@ -29,7 +28,7 @@ def gcloud_download_companieshouse_file(request, context=None) -> None:
     # with open("file.zip", "wb") as file:
     #     file.write(response.content)
 
-    # print("File downloaded successfully!")
+    print("File downloaded successfully!")
     
     print(os.environ['GOOGLE_APPLICATION_CREDENTIALS'])
 
