@@ -40,7 +40,6 @@ jobs:
         --trigger-http \
         --entry-point gcloud_download_companieshouse_file \
         --region europe-central2 \
-        --set-env-vars GOOGLE_APPLICATION_CREDENTIALS=${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }} \
         --source ./gcloud/gcloud_functions
 
 
