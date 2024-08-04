@@ -16,7 +16,7 @@ def gcloud_download_companieshouse_file(request, context=None) -> None:
     """
     
     # The URL of the file to download
-    url = 'https://download.companieshouse.gov.uk/BasicCompanyDataAsOneFile-2024-06-01.zip'
+    url = 'https://download.companieshouse.gov.uk/BasicCompanyDataAsOneFile-2024-08-01.zip'
     
     # Get the filename from the URL
     filename = url.split('/')[-1]
@@ -26,9 +26,15 @@ def gcloud_download_companieshouse_file(request, context=None) -> None:
     if response.status_code != 200:
         return f'Failed to download file from {url}', 500
     
-    print('Success!')
+    with open("file.zip", "wb") as file:
+        file.write(response.content)
+
+    print("File downloaded successfully!")
     
-    # Bucket upload
+    import os
+    print(os.environ['GOOGLE_APPLICATION_CREDENTIALS'])
+
+    # # Bucket upload
     # GCloudIntegrationObject = GCloudIntegration(project_id = 'companieshouse-test') 
     # secret = GCloudIntegrationObject.get_secret(project_id = 'companieshouse-test', secret_id = "credentials-for-authentication")
     # GCloudIntegrationObject.upload_data_to_cloud_from_file(
@@ -39,4 +45,4 @@ def gcloud_download_companieshouse_file(request, context=None) -> None:
     #     filename = filename
     # )
     
-    return True
+    return 200
