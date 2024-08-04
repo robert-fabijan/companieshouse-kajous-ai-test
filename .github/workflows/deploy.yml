@@ -41,7 +41,7 @@ jobs:
         --entry-point gcloud_download_companieshouse_file \
         --region europe-central2 \
         --source ./gcloud/gcloud_functions \
-        --set-env-vars GOOGLE_APPLICATION_CREDENTIALS=${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+        
 
     - name: Deploy workflow
       run: |
