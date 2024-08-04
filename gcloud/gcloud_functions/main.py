@@ -26,10 +26,10 @@ def gcloud_download_companieshouse_file(request, context=None) -> None:
     if response.status_code != 200:
         return f'Failed to download file from {url}', 500
     
-    with open("file.zip", "wb") as file:
-        file.write(response.content)
+    # with open("file.zip", "wb") as file:
+    #     file.write(response.content)
 
-    print("File downloaded successfully!")
+    # print("File downloaded successfully!")
     
     import os
     print(os.environ['GOOGLE_APPLICATION_CREDENTIALS'])
