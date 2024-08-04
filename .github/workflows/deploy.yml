@@ -41,7 +41,7 @@ jobs:
         --entry-point gcloud_download_companieshouse_file \
         --region europe-central2 \
         --set-env-vars GOOGLE_APPLICATION_CREDENTIALS=${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }} \
-        --source ./gcloud/gcloud_functions \ 
+        --source ./gcloud/gcloud_functions
 
 
     - name: Add Invoker Priviliges to Function
