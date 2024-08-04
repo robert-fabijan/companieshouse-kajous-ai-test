@@ -35,6 +35,8 @@ jobs:
     - name: Deploy to Google Cloud Functions
       run: |
         gcloud functions deploy companieshouse-function \
+        --CPU 1 \
+        --memory 500 \
         --gen2 \
         --runtime python311 \
         --trigger-http \
