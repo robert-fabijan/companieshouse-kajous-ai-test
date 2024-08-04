@@ -2,6 +2,8 @@ import functions_framework
 import sys
 import os
 import requests
+from io import BytesIO
+from google.cloud import storage
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  
@@ -25,26 +27,26 @@ def gcloud_download_companieshouse_file(request, context=None) -> None:
     filename = url.split('/')[-1]
 
     # Download the file
-    response = requests.get(url)
-    if response.status_code != 200:
-        return f'Failed to download file from {url}', 500
-    
-    # with open("file.zip", "wb") as file:
-    #     file.write(response.content)
+    # Create a requests session
+    session = requests.Session()
+    bucket_name = 'raw_files_companieshouse'
 
-    print("File downloaded successfully!")
-    
-    print()
+    #  Get the file content from the URL
+    response = session.get(url, stream=True)
+    if response.status_code == 200:
+        # Read the content into a BytesIO object
+        file_stream = BytesIO(response.content)
+        
+        # Create a storage client
+        storage_client = storage.Client()
+        bucket = storage_client.bucket(bucket_name)
+        blob = bucket.blob(filename)
+        
+        # Upload the file content from the BytesIO object
+        blob.upload_from_file(file_stream, rewind=True)
+        
+        print(f"File uploaded to {filename} in bucket {bucket_name}.")
+    else:
+        response.raise_for_status()
 
-    # # Bucket upload
-    GCloudIntegrationObject = GCloudIntegration(project_id = 'companieshouse-test') 
-    # secret = GCloudIntegrationObject.get_secret(project_id = 'companieshouse-test', secret_id = "credentials-for-authentication")
-    GCloudIntegrationObject.upload_data_to_cloud_from_file(
-        secret = os.environ['GOOGLE_APPLICATION_CREDENTIALS'],
-        bucket_name = 'companieshouse_bucket',
-        response = response,
-        blob_name = 'raw_files_companieshouse',
-        filename = filename
-    )
-    
-    return 'Test'
+    return "True"
